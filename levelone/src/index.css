@@ -25,7 +25,8 @@
 body{
     margin: 0;
     padding: 0;
-   font-family: var(--mainfont);
+    font-family: var(--mainfont);
+    min-height: 160vh;
 }
 
 nav{    
@@ -134,9 +135,47 @@ nav ul li a{
     color: white;
     background: var(--Yellow);
     cursor: pointer;
+    border: 1px solid var(--Yellow);
+    transition: all ease 0.3s;
+    letter-spacing: 0.5px;
+}
+.content button:hover{
+    background: white;
+    color: var(--Yellow);
 }
 .container img{
     max-width: 450px;
     height: auto;
     margin-left: 20px;
+}
+.bed-space{  /* THE WHOLE SECTION */
+    position: relative;
+    border: 1px solid var(--navbuttons);
+    max-width: 1200px;
+    margin: auto;
+    padding: 4rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+.beds{  /* 4 BEDS AT WHOLE */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    border: solid 1px var(--navbuttons);
+    max-width: 350px;
+    padding: 2rem 2rem;
+}
+.bed-container{     /* SINGLE BEDS */
+    display: flex;
+    flex-direction: column;
+    border: solid 1px var(--navbuttons);
+    max-width: 120px;
+    background: white;
+    padding: 1rem 1rem;
+    border-radius: 5px;
+}
+.available-bed{
+    max-width: 90px;
+    height: auto;
 }
