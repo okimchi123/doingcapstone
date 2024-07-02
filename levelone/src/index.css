@@ -3,16 +3,32 @@
 :root {
     --Yellow: #FFBA14;
     --Maroon: #97180c;
+    --Red: #FF2D19;
+    --Green: #2FC32C;
+    --normal-fontcolor:#202B37;
+    --light_gray: #97A1AF;
     --navbuttons: #7D7D7D;
     --mainfont: 'Poppins', 'sans-serif';
     --secondfont: 'Inter', 'san-serif';
   }
 /* UTILITY CLASS */
+.span-normal{
+    color: var(--normal-fontcolor);
+}
 .span-red{
  color: var(--Maroon);
 }
 .span-yellow{
  color: var(--Yellow);
+}
+.span-green{
+    color: var(--Green);
+}
+.span-lightred{
+    color: var(--Red) 
+}
+.span-lightgray{
+    color: var(--light_gray);
 }
 /* UTILITY CLASS */
   *{
@@ -26,11 +42,15 @@ body{
     margin: 0;
     padding: 0;
     font-family: var(--mainfont);
-    min-height: 160vh;
+    min-height: 230vh;
 }
 
 nav{    
     /* border: black solid; */
+    position:sticky;
+    top: 0;
+    background: white;
+    z-index: 1;
     width: 100%;
     pad: 0 1rem;
     padding-left: 1rem;
@@ -48,19 +68,19 @@ nav{
 nav ul{
     /* border: red solid; */
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 1rem;
     list-style: none;
     margin: o;
     padding: 0;
     
 }
-@media (min-width: 940px){
+/* @media (min-width: 940px){
     nav ul{
         flex-direction: row;
     }
   
-}
+} */
 
 nav ul li{
     display: flex;
@@ -150,7 +170,6 @@ nav ul li a{
 }
 .bed-space{  /* THE WHOLE SECTION */
     position: relative;
-    border: 1px solid var(--navbuttons);
     max-width: 1200px;
     margin: auto;
     padding: 4rem 2rem;
@@ -159,23 +178,120 @@ nav ul li a{
     align-items: center;
 }
 .beds{  /* 4 BEDS AT WHOLE */
+    margin-left: 30px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    border: solid 1px var(--navbuttons);
     max-width: 350px;
     padding: 2rem 2rem;
 }
 .bed-container{     /* SINGLE BEDS */
     display: flex;
+    align-items: center;
     flex-direction: column;
-    border: solid 1px var(--navbuttons);
-    max-width: 120px;
+    gap: 0.3rem;
+    max-width: 125px;
     background: white;
     padding: 1rem 1rem;
     border-radius: 5px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
 }
-.available-bed{
+.bed-container img{
     max-width: 90px;
     height: auto;
+}
+.bed-container span{
+    font-size: small;
+}
+.bed-header{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    max-width: 350px;
+}
+.bed-header h1{
+    font-weight: bold;
+    background: linear-gradient(to right, var(--Yellow), #bd890f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.bed-header p{
+    max-width: 300px;
+    text-align: right;
+}
+.weather-check{
+    position: relative;
+    max-width: 1200px;
+    margin: auto;
+    padding: 4rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 3rem;
+}
+.weather-header{
+    margin-left: 60px;
+    max-width: 520px;
+}
+.weather-header h1{
+    font-weight: bold;
+    background: linear-gradient(to right, #fa685a, #99281e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.weather-header p{
+    line-height: 1.4;
+}
+.weather-container{ /* WHOLE CONTAINER */
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 3rem;
+    max-width: 350px;
+    min-height: 320px;
+    border-radius: 15px;
+    gap: 1rem;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.2);
+}
+.temp-part{     /* TOP PART */
+    display: flex;
+    gap: 0.5rem;
+}
+.temp-heatwave{ 
+    display: flex;
+    flex-direction: column;
+}
+.temp-heatwave h1{  
+    font-size:xxx-large;
+    font-weight: 400;
+    line-height: 0.7;
+}
+.heatwave span{
+    font-size: medium;
+    margin-left: 3px;
+    font-weight: 500;
+}
+.heatwave{
+    margin:0;
+    /* border:1px solid black; */
+}
+.location-part{ /* MIDDLE PART */
+    display: flex;
+    gap: 1rem;
+    margin-left:10px;
+}
+.location{
+    margin-top: 12px;
+}
+.location h3{
+    font-weight: 500;
+    line-height: 0.6;
+}
+.sickness-part{ /* BOTTOM PART */
+    display: flex;
+    align-items: start;
+    gap: 2rem;
+    margin-left:7px;
+}
+.sickness-part img{
+    margin-top: 5px;
 }
